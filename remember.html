@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>found </title>
+</head>
+
+<body>
+    <h1 class="result">---</div>
+        <script>
+            //Написати функцію, яка буде виводити символи (включаючи пробыли, цифри) які повторюются в строці
+            function remember(str) {
+                const arr = str.split('');
+                const hash = new Map();
+                const result = [];
+                for (let i = 0; i < arr.length; i++) {
+                    if (hash.get(arr[i]) === undefined) {
+                        hash.set(arr[i], true);
+                    } else {
+                        const value = hash.get(arr[i]);
+                        if (value) {
+                            hash.set(arr[i], !value);
+                        }
+                    }
+                }
+                hash.forEach((v, k) => {
+                    if (!v)
+                        result.push(k);
+                });
+                return result;
+            }
+            console.log(remember("kfkjj  "));
+        </script>
+</body>
+
+</html>

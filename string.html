@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Capitalize</title>
+</head>
+
+<body>
+    <script>
+        // 1. Написати функцію, скорочує строку і додає три крапки
+        function truncate(str, maxlength) {
+            return str.substring(0, maxlength) + "...";
+        }
+
+        console.log(truncate("dfghjk", 3));
+        // 2. Знайти кількість букв "а" в речені "Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова Данила Галицького." використовуючи indexOf
+        var string1 = "Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова Данила Галицького.";
+        var idx = 0;
+        var count = 0;
+        while (~string1.indexOf('а', idx)) {
+            count++;
+            idx = string1.indexOf('а', idx) + 1;
+        }
+        console.log(count);
+        // 3. Написати функцію, яка буде фільтрувати рядок і видиляти слова "xxxx" i "polityka"
+        function filter(str){
+            var filteredString;
+            filteredString = str.replace(/xxxx\.?\,? ?/gi, "");
+            filteredString = filteredString.replace(/polytika\.?\,? ?/gi, "");
+            return filteredString;
+        }
+        console.log(filter("sdfghxxxxsdfghjpolitykadcfghnjm,xxxx"))
+        // 4. Профільтрувати строку "іва 24 уц ац34434ауку" і виветси тільки цифри
+        function onlyNumbers(str){
+            var newStr;
+            newStr = str.replace(/\D+/g, "");
+            return newStr;
+        }
+        console.log(onlyNumbers("dfgh456fvghb678fgvh345ghjk"));
+    </script>
+</body>
+
+</html>
